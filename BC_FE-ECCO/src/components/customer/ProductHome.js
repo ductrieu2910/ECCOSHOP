@@ -23,9 +23,9 @@ const ProductHome = () => {
       style={{ marginTop: "100px", marginBottom: "40px" }}
       className="container"
     >
-      <h3 style={{ marginBottom: "20px", textAlign: "center" }}>
+      <h1 style={{ marginBottom: "20px", textAlign: "center" }}>
       New Shoes Arrival
-      </h3>
+      </h1>
       <p style={{ textAlign: "justify", width: "600px", margin: "auto" }}>
         
       </p>
@@ -52,6 +52,7 @@ const ProductHome = () => {
                       cursor: "pointer",
                       display:"flex",
                       justifyContent:"center",
+                      fontSize:"15px",
                     }}
                     onClick={() => navigate(`/detail/${item.id}`)}
                   >

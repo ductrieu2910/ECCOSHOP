@@ -11,6 +11,9 @@ import { FaUserCircle } from "react-icons/fa";
 import Form from "react-bootstrap/Form";
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
+import takecare from "../../assets/customer/images/takecare.webp";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const ProductDetail = () => {
   const navigate = useNavigate();
@@ -26,6 +29,7 @@ const ProductDetail = () => {
     setSize(event.target.value);
   };
   useEffect(() => {
+    AOS.init();
     dispatch(getProductDetail(product_id));
   }, []);
   const addTocartClick = (product, cartQuantity) => {
@@ -144,7 +148,7 @@ const ProductDetail = () => {
             </div>
             <div className="col-6">
               <div>
-                <p style={{ fontSize: "20px" }}>{productDetail.name}</p>
+                <p style={{ fontSize: "40px" }}>{productDetail.name}</p>
               </div>
               <div>
                 <p
@@ -339,7 +343,7 @@ const ProductDetail = () => {
               </div>
             </div>
           </div>
-          <div style={{ marginTop: "80px" }} className="container">
+          <div style={{ marginTop: "80px" }} className="container" data-aos="fade-up">
             <h5 style={{ marginBottom: "40px" }}>ĐÁNH GIÁ SẢN PHẨM</h5>
             {rate && rate.length > 0 ? (
               rate.map((item, index) => {
@@ -363,6 +367,9 @@ const ProductDetail = () => {
                 Sản phẩm chưa có đánh giá !
               </div>
             )}
+          </div>
+          <div data-aos="fade-up">
+          <img src={takecare} width={"100%"} alt="" />
           </div>
         </div>
       )}
